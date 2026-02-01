@@ -59,6 +59,7 @@
                 compatible = "zmk,keymap";
 
                 default_layer {
+                display-name = "F";
 // -----------------------------------------------------------------------------------------
 //              |  Q  |  W  |  E  |  R  |  T  |   |  Y  |  U   |  I  |  O  |  P  |
 //              |  A  |  S  |  D  |  F  |  G  |   |  H  |  J   |  K  |  L  |  ;  |
@@ -74,6 +75,7 @@
 
             // Layer 1: Numpad (7 8 9 | 4 5 6 | 1 2 3)
             numpad_layer {
+            display-name = "NUM";
                 bindings = <
                     &trans &trans &trans &trans &trans    &trans &kp N7 &kp N8 &kp N9 &trans
                     &trans &trans &trans &trans &trans    &trans &kp N4 &kp N5 &kp N6 &trans
@@ -87,6 +89,7 @@
             // = { } _
             // Layer 2: Brackets & Math (" ( ) ' | + [ ] - | = { } _)
             brackets_layer {
+            display-name = "BRC";
                 bindings = <
                     &trans &trans &trans &trans &trans   &trans &kp DQT   &kp LPAR  &kp RPAR  &kp SQT
                     &trans &trans &trans &trans &trans   &trans &kp PLUS  &kp LBKT  &kp RBKT  &kp MINUS
@@ -97,6 +100,7 @@
 
             // Layer 3: Navigation (Arrows & Page Keys)
             nav_layer {
+            display-name = "ARR";
                 bindings = <
                     &bt BT_CLR &trans &trans &trans &trans    &trans &kp PG_UP &kp UP    &kp PG_DN &trans
                     &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4 &trans &kp LEFT  &kp DOWN  &kp RIGHT &trans
@@ -107,6 +111,7 @@
 
             // Layer 4: Symbols (! @ # $ % ^ & *)
             symbol_layer {
+            display-name = "SYM";
                 bindings = <
                     &trans &trans &trans &trans &trans    &trans &kp AMPS &kp ASTRK &trans  &trans
                     &trans &trans &trans &trans &trans    &trans &kp DLLR &kp PRCNT &kp CARET &trans
