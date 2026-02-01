@@ -10,8 +10,8 @@
 
 #define GLOBAL_QUICK_TAP_MS 175
 #define DEF 0
-#define BRC 1
-#define NUM 2
+#define NUM 1
+#define BRC 2
 #define NAV 3
 #define SYM 4
 
@@ -72,26 +72,26 @@
                         >;
                 };
 
-            // " ( ) '
-            // + [ ] -
-            // = { } _
-            // Layer 1: Brackets & Math (" ( ) ' | + [ ] - | = { } _)
-            brackets_layer {
-                bindings = <
-                    &trans &trans &trans &trans &trans   &trans &kp DQT   &kp LPAR  &kp RPAR  &kp SQT
-                    &trans &trans &trans &trans &trans   &trans &kp PLUS  &kp LBKT  &kp RBKT  &kp MINUS
-                    &trans &trans &trans &trans &trans   &trans &kp EQUAL &kp LBRC  &kp RBRC  &kp UNDER
-                                  &trans &trans &trans    &trans    &trans    &trans
-                >;
-            };
-
-            // Layer 2: Numpad (7 8 9 | 4 5 6 | 1 2 3)
+            // Layer 1: Numpad (7 8 9 | 4 5 6 | 1 2 3)
             numpad_layer {
                 bindings = <
                     &trans &trans &trans &trans &trans    &trans &kp N7 &kp N8 &kp N9 &trans
                     &trans &trans &trans &trans &trans    &trans &kp N4 &kp N5 &kp N6 &trans
                     &trans &trans &trans &trans &trans    &trans &kp N1 &kp N2 &kp N3 &trans
                                   &trans &trans &trans    &trans &kp N0 &trans
+                >;
+            };
+
+            // " ( ) '
+            // + [ ] -
+            // = { } _
+            // Layer 2: Brackets & Math (" ( ) ' | + [ ] - | = { } _)
+            brackets_layer {
+                bindings = <
+                    &trans &trans &trans &trans &trans   &trans &kp DQT   &kp LPAR  &kp RPAR  &kp SQT
+                    &trans &trans &trans &trans &trans   &trans &kp PLUS  &kp LBKT  &kp RBKT  &kp MINUS
+                    &trans &trans &trans &trans &trans   &trans &kp EQUAL &kp LBRC  &kp RBRC  &kp UNDER
+                                  &trans &trans &trans    &trans    &trans    &trans
                 >;
             };
 
