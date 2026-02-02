@@ -103,7 +103,7 @@
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
                         // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
-                    &esc_cmd LALT ESC  &esc_cmd LGUI BSPC  &lt BRC ENTER
+                    &esc_cmd LALT ESC  &kp LGUI  &lt BRC ENTER
 
                         // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
                     &lt ARR TAB &lt NUM SPACE  &lt SYM BSPC
