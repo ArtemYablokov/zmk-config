@@ -10,10 +10,11 @@
 
 
 #define DEF 0
-#define NUM 1
-#define BRC 2
-#define NAV 3
+#define BRC 1
+#define ARR 2
+#define NUM 3
 #define SYM 4
+#define F 5
 
 / {
   chosen {
@@ -38,24 +39,40 @@
             key-positions = <3 6>;
             bindings = <&kp CAPS>;
         };
+
+        // Toggle F-Layer by pressing both inner thumbs (32 and 33)
+        combo_f_layer {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&mo 5>;
+        };
     };
 };
 
-// Easier double-tapping ?
-// #define GLOBAL_QUICK_TAP_MS 200
-// quick-tap-ms = <GLOBAL_QUICK_TAP_MS>;
-
-// when triggered TAP
-#define TAPPING_TERM_MS 300
-
 / {
     behaviors {
+        // "Turbo" Thumb: Hold = Command (LGUI), Tap = ESC
+        // Tuned to 150ms for a snappy, intentional feel.
+        esc_cmd: esc_cmd {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <150>;
+            quick-tap-ms = <125>;
+            hold-trigger-on-release; // Immediate CMD shortcuts on Mac
+            bindings = <&kp>, <&kp>;
+        };
+
+        // Refined Home Row Shift
+        // require-prior-idle-ms ensures no accidental shifts while typing fast.
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             tapping-term-ms = <200>;
-            flavor = "tap-preferred";
+            quick-tap-ms = <175>;
+            flavor = "balanced";
             bindings = <&kp>, <&kp>;
+            require-prior-idle-ms = <150>;
         };
 
         // Your new Thumb Layer Taps (Tap-Preferred flavor)
@@ -72,44 +89,43 @@
 
 / {
         keymap {
-                compatible = "zmk,keymap";
+            compatible = "zmk,keymap";
 
-                default_layer {
-                display-name = "F";
-                    bindings = <
-                                  &kp Q &kp W &kp E &kp R &kp T             &kp Y &kp U  &kp I  &kp O   &kp P
-                                  &kp A &kp S &kp D &hm LSHIFT F &kp G      &kp H &hm RSHIFT J &kp K &kp L &hm RCTRL SEMI
-                                  &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-                                  &kp LALT  &kp LGUI  &lt BRC TAB             &lt NAV ENTER    &lt NUM SPACE  &lt SYM  BSPC
-                    >;
-                };
-
-            // Layer 1: Numpad (7 8 9 | 4 5 6 | 1 2 3)
-            numpad_layer {
-            display-name = "NUM";
+            default_layer {
+            display-name = "DEF";
                 bindings = <
-                    &kp ESC &trans &trans &trans &trans    &none &kp N7 &kp N8 &kp N9 &none
-                    &trans &trans &trans &trans &trans    &none &kp N4 &kp N5 &kp N6 &none
-                    &trans &trans &trans &trans &trans    &kp N0 &kp N1 &kp N2 &kp N3 &none
-                                  &trans &trans &trans    &trans &trans &trans
+                    &kp Q &kp W &kp E &kp R &kp T             &kp Y &kp U  &kp I  &kp O   &kp P
+                    &kp A &kp S &kp D &hm LSHIFT F &kp G      &kp H &hm RSHIFT J &kp K &kp L &hm RCTRL SEMI
+                    &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
+
+                        // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
+                    &kp LALT  &esc_cmd LGUI ESC  &lt BRC TAB
+
+                        // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
+                    &lt ARR ENTER  &lt NUM SPACE  &lt SYM BSPC
                 >;
             };
+
+
 
             // " ( ) '
             // + [ ] -
             // = { } _
-            // Layer 2: Brackets & Math (" ( ) ' | + [ ] - | = { } _)
+            // Layer 1: Brackets & Math
+            // ESC    ~      ` " ( ) '
+            //               | + [ ] -
+            //               \ = { } _
             brackets_layer {
             display-name = "BRC";
                 bindings = <
-                    &kp ESC &trans &trans &trans &trans   &none &kp DQT   &kp LPAR  &kp RPAR  &kp SQT
-                    &trans &trans &trans &trans &trans   &none &kp PLUS  &kp LBKT  &kp RBKT  &kp MINUS
-                    &trans &trans &trans &trans &trans   &none &kp EQUAL &kp LBRC  &kp RBRC  &kp UNDER
-                                  &trans &trans &trans    &trans    &trans    &trans
+                    &kp ESC &trans &trans &trans &kp TILDE  &kp GRAVE   &kp DQT   &kp LPAR  &kp RPAR  &kp SQT
+                    &trans &trans &trans &trans &trans      &kp PIPE &kp PLUS  &kp LBKT  &kp RBKT  &kp MINUS
+                    &trans &trans &trans &trans &trans      &kp BSLH &kp EQUAL &kp LBRC  &kp RBRC  &kp UNDER
+                                  &trans &trans &trans      &trans    &trans    &trans
                 >;
             };
 
-            // Layer 3: Navigation (Arrows & Page Keys)
+            // Layer 2: Navigation (Arrows & Page Keys)
             nav_layer {
             display-name = "ARR";
                 bindings = <
@@ -120,14 +136,37 @@
                 >;
             };
 
-            // Layer 4: Symbols (! @ # $ % ^ & *)
+            // Layer 3: Numpad (7 8 9 | 4 5 6 | 1 2 3)
+            numpad_layer {
+            display-name = "NUM";
+                bindings = <
+                    &kp ESC &trans &trans &trans &trans    &none &kp N7 &kp N8 &kp N9 &none
+                    &trans &trans &trans &trans &trans    &none &kp N4 &kp N5 &kp N6 &none
+                    &trans &trans &trans &trans &trans    &kp N0 &kp N1 &kp N2 &kp N3 &none
+                                  &trans &trans &trans    &trans &trans &trans
+                >;
+            };
+
+            // Layer 4: Symbols (! @ # $ % ^ & *) + BT
             symbol_layer {
             display-name = "SYM";
                 bindings = <
-                    &bt BT_CLR &trans &trans &trans &trans                              &trans &kp AMPS &kp ASTRK &trans  &trans
-                    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &trans &kp DLLR &kp PRCNT &kp CARET &trans
-                    &trans &trans &trans &trans &trans                                  &trans &kp EXCL &kp AT &kp HASH  &trans
+                    &bt BT_CLR &trans &trans &trans &trans                              &none &kp AMPS &kp ASTRK     &none  &none
+                    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &kp DLLR &kp PRCNT &kp CARET &none
+                    &trans &trans &trans &trans &trans                                  &none &kp EXCL &kp AT    &kp HASH     &none
                                   &trans &trans &trans                                  &trans &trans &trans
+                >;
+            };
+
+
+            // Layer 5: F
+            f_layer {
+                display-name = "F-KEYS";
+                bindings = <
+                    &trans &trans &trans &trans &trans    &kp F12  &kp F7  &kp F8  &kp F9  &none
+                    &trans &trans &trans &trans &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
+                    &trans &trans &trans &trans &trans    &kp F10  &kp F1 &kp F2  &kp F3  &none
+                                  &trans &trans &trans    &trans &trans &trans
                 >;
             };
 
