@@ -116,10 +116,10 @@
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
                         // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
-                    &esc_cmd LALT ESC  &esc_cmd LGUI BSPC  &lt BRC ENTER
+                    &esc_cmd LALT ESC  &esc_cmd LGUI BSPC  &lt  NUM ENTER
 
                         // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
-                    &lt ARR TAB &lt NUM SPACE  &lt SYM BSPC
+                    &lt ARR TAB &lt BRC SPACE  &lt SYM BSPC
                 >;
             };
 
@@ -129,15 +129,15 @@
             // + [ ] -
             // = { } _
             // Layer 1: Brackets & Math
-            // ESC    ~      ` " ( ) '
-            //               | + [ ] -
-            //               \ = { } _
+            // ESC           ` ' " ~
+            //               | + - =
+            //               \ _
             brackets_layer {
             display-name = "BRC";
                 bindings = <
-                    &kp ESC &trans &trans &trans &kp TILDE  &kp GRAVE   &kp DQT   &kp LPAR  &kp RPAR  &kp SQT
-                    &trans &trans &trans &trans &trans      &kp PIPE &kp PLUS  &kp LBKT  &kp RBKT  &kp MINUS
-                    &trans &trans &trans &trans &trans      &kp BSLH &kp EQUAL &kp LBRC  &kp RBRC  &kp UNDER
+                    &kp ESC &trans &trans &trans &trans     &kp GRAVE &kp SQT   &kp DQT    &none      &kp TILDE
+                    &trans &trans &trans &trans &trans      &kp PIPE  &kp PLUS  &kp MINUS  &kp EQUAL  &none
+                    &trans &trans &trans &trans &trans      &kp BSLH  &kp UNDER &none      &none      &none
                                   &trans &trans &trans      &trans    &trans    &trans
                 >;
             };
