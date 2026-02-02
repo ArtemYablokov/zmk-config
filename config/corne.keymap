@@ -73,12 +73,13 @@
             bindings = <&mo>, <&kp>;   // Hold = Layer, Tap = Key
         };
 
-        // Nested behavior: Decides between Command (hold) and TAB (tap)
+        // This is the "bundle"
+        // It's a hold-tap where Hold = Cmd and Tap = Tab
         gui_tab: gui_tab {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             bindings = <&kp>, <&kp>;
         };
 
@@ -90,7 +91,7 @@
             #binding-cells = <2>;
             flavor = "balanced";
             tapping-term-ms = <300>;
-            hold-trigger-on-release; // The "Immediate Command" magic
+            hold-trigger-on-release;
             bindings = <&mo>, <&gui_tab>;
         };
     };
@@ -106,7 +107,7 @@
                                                   &kp Q &kp W &kp E &kp R &kp T        &kp Y &kp U  &kp I  &kp O   &kp P
                                  &kp A &hm LALT S &hm LGUI D &hm LSHIFT F &kp G        &kp H &hm RSHIFT J &hm RGUI K &hm RALT L &hm RCTRL SEMI
                                                   &kp Z &kp X &kp C &kp V &kp B        &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-                             &lt_relaxed NUM ESC  &kp BSPC &smart_thumb BRC &gui_tab LGUI TAB       &lt_relaxed NAV ENTER    &kp SPACE  &lt_relaxed SYM  DEL
+                             &lt_relaxed NUM ESC  &kp BSPC &smart_thumb BRC            &lt_relaxed NAV ENTER    &kp SPACE  &lt_relaxed SYM  DEL
                     >;
                 };
 
