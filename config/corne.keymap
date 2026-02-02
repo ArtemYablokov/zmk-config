@@ -14,7 +14,7 @@
 #define ARR 2
 #define NUM 3
 #define SYM 4
-#define F 5
+#define FF 5
 
 / {
   chosen {
@@ -159,9 +159,9 @@
             };
 
 
-            // Layer 5: F
+            // Layer 5: FF
             f_layer {
-                display-name = "F-KEYS";
+                display-name = "FF";
                 bindings = <
                     &trans &trans &trans &trans &trans    &kp F12  &kp F7  &kp F8  &kp F9  &none
                     &trans &trans &trans &trans &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
