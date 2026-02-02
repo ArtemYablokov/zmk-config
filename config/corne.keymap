@@ -42,10 +42,23 @@
 
         // Toggle F-Layer by pressing both inner thumbs (32 and 33)
         combo_f_layer {
-            timeout-ms = <50>;
+            timeout-ms = <70>;
             key-positions = <32 33>;
             bindings = <&mo 5>;
         };
+
+        // Parentheses
+        combo_lpar { timeout-ms = <70>; key-positions = <1 2>; bindings = <&kp LPAR>; };
+        combo_rpar { timeout-ms = <70>; key-positions = <7 8>; bindings = <&kp RPAR>; };
+
+        // Square Brackets
+        combo_lbkt { timeout-ms = <70>; key-positions = <11 12>; bindings = <&kp LBKT>; };
+        combo_rbkt { timeout-ms = <70>; key-positions = <17 18>; bindings = <&kp RBKT>; };
+
+        // Curly Brackets
+        combo_lbrc { timeout-ms = <70>; key-positions = <21 22>; bindings = <&kp LBRC>; };
+        combo_rbrc { timeout-ms = <70>; key-positions = <27 28>; bindings = <&kp RBRC>; };
+
     };
 };
 
@@ -103,7 +116,7 @@
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
                         // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
-                    &esc_cmd LALT ESC  &kp LGUI  &lt BRC ENTER
+                    &esc_cmd LALT ESC  &esc_cmd LGUI BSPC  &lt BRC ENTER
 
                         // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
                     &lt ARR TAB &lt NUM SPACE  &lt SYM BSPC
