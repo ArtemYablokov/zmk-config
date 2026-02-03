@@ -29,7 +29,7 @@
         // F + J = Caps Word (Turns off on Space)
         combo_caps_word {
             timeout-ms = <70>;
-            key-positions = <13 16>; // F and J on a 36-key Corne
+            key-positions = <13 16>;
             bindings = <&caps_word>;
         };
 
@@ -45,6 +45,13 @@
             timeout-ms = <70>;
             key-positions = <32 33>;
             bindings = <&mo 5>;
+        };
+
+        // Toggle DELETE_ROW by pressing both
+        combo_f_layer {
+            timeout-ms = <70>;
+            key-positions = <23 26>;
+            bindings = <&kp LG(BSPC)>;
         };
 
         // Parentheses
@@ -127,7 +134,7 @@
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
                         // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
-                    &esc_cmd LALT LG(BSPC)    &esc_cmd LGUI BSPC      &num_del_line NUM  LA(BSPC)
+                    &esc_cmd LALT LA(BSPC)    &esc_cmd LGUI BSPC     &lt NUM TAB
 
                         // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
                                                                                     &lt ARR TAB          &lt BRC SPACE       &lt SYM ENTER
