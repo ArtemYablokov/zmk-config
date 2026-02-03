@@ -15,6 +15,7 @@
 #define NUM 3
 #define SYM 4
 #define FF 5
+#define CMD 6
 
 / {
   chosen {
@@ -134,10 +135,10 @@
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
                         // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
-                    &esc_cmd LALT LA(BSPC)    &esc_cmd LGUI BSPC     &lt NUM TAB
+                    &esc_cmd LALT  ESC   &lt CMD LGUI      &lt NUM TAB
 
                         // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
-                                                                                    &lt ARR TAB          &lt BRC SPACE       &lt SYM ENTER
+                                                                                    &lt ARR ENTER          &lt BRC SPACE       &lt SYM BSPC
                 >;
             };
 
@@ -202,6 +203,16 @@
                     &trans &trans &trans &trans &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
                     &trans &trans &trans &trans &trans    &kp F10  &kp F1 &kp F2  &kp F3  &none
                                   &trans &trans &trans    &trans &trans &trans
+                >;
+            };
+
+            cmd_layer {
+                display-name = "CMD";
+                bindings = <
+                    &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans
+                    &trans &trans &trans &trans &kp TAB          &trans &trans &trans &trans &trans
+                    &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans
+                                         &trans &trans &trans    &trans &trans &trans
                 >;
             };
 
