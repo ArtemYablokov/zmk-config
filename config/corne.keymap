@@ -134,11 +134,9 @@
                     &kp A &kp S &kp D &hm LSHIFT F &kp G      &kp H &hm RSHIFT J &kp K &kp L &hm RCTRL SEMI
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
-                        // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
-                    &esc_cmd LALT  ESC   &kp LGUI      &lt NUM TAB
+                        &lt NUM  ESC     &esc_cmd LALT TAB    &kp LGUI
 
-                        // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
-                                                                                    &lt ARR ENTER          &lt BRC SPACE       &lt SYM BSPC
+                        &lt ARR SPACE           &lt BRC BSPC        &lt SYM ENTER
                 >;
             };
 
