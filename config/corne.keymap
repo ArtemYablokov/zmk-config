@@ -127,7 +127,7 @@
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
                         // Left Thumbs: Alt, Cmd/Esc, Brackets/Tab
-                    &esc_cmd LALT LA(BSPC)    &esc_cmd LGUI BSPC      &num_del_line NUM LG(BSPC)
+                    &esc_cmd LALT LG(BSPC)    &esc_cmd LGUI BSPC      &num_del_line NUM  LA(BSPC)
 
                         // Right Thumbs: Nav/Enter, Num/Space, Symbol/Backspace
                                                                                     &lt ARR TAB          &lt BRC SPACE       &lt SYM ENTER
