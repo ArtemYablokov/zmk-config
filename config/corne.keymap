@@ -72,15 +72,13 @@
 
 / {
     behaviors {
-        // "Turbo" Thumb: Hold = Command (LGUI), Tap = ESC
-        // Tuned to 150ms for a snappy, intentional feel.
         esc_cmd: esc_cmd {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "tap-preferred";
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <125>;
-            hold-trigger-on-release; // Immediate CMD shortcuts on Mac
+            hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
 
