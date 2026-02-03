@@ -74,6 +74,7 @@
     behaviors {
         // "Turbo" Thumb: Hold = Command (LGUI), Tap = ESC
         // Tuned to 150ms for a snappy, intentional feel.
+        // decided to use default - since hard to trigger
         esc_cmd: esc_cmd {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -134,9 +135,9 @@
                     &kp A &kp S &kp D &hm LSHIFT F &kp G      &kp H &hm RSHIFT J &kp K &kp L &hm RCTRL SEMI
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
-                        &lt NUM  ESC     &esc_cmd LALT TAB    &kp LGUI
+                        &lt NUM  ESC     &lt LALT TAB    &kp LGUI
 
-                        &lt ARR SPACE           &lt BRC BSPC        &lt SYM ENTER
+                        &lt ARR SPACE    &lt BRC BSPC    &lt SYM ENTER
                 >;
             };
 
