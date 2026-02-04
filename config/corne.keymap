@@ -109,7 +109,7 @@
 
                         &esc_cmd LALT ESC   &kp  LGUI    &lt  NUM ENTER
 
-                        &lt ARR SPACE    &lt BRC BSPC    &lt SYM TAB
+                        &lt ARR TAB    &lt BRC SPACE     &lt SYM BSPC
                 >;
             };
 
