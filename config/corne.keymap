@@ -107,12 +107,12 @@
                     &kp A &kp S &kp D &hm LSHIFT F &kp G      &kp H &hm RSHIFT J &kp K &kp L &hm RCTRL SEMI
                     &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
-                        &esc_cmd LALT ESC   &kp  LGUI    &lt  NUM ENTER
+                        &esc_cmd LALT ESC   &kp  LGUI    &lt  NUM TAB
 
-                        &lt ARR TAB    &lt BRC SPACE     &lt SYM BSPC
+                        &lt ARR ENTER     &lt BRC SPACE     &lt SYM  BSPC
                 >;
             };
-
+aaaa
 
 
             // " ( ) '
@@ -126,7 +126,7 @@
             display-name = "BRC";
                 bindings = <
                     &kp ESC &trans &trans &trans &trans     &kp GRAVE &kp SQT   &kp DQT    &none      &kp TILDE
-                    &trans &trans &trans &trans &trans      &kp PIPE  &kp PLUS  &kp MINUS  &kp EQUAL  &none
+                    &kp TAB &trans &trans &trans &trans      &kp PIPE  &kp PLUS  &kp MINUS  &kp EQUAL  &none
                     &trans &trans &trans &trans &trans      &kp BSLH  &kp UNDER &none      &none      &none
                                   &trans &trans &trans      &trans    &trans    &trans
                 >;
@@ -137,7 +137,7 @@
             display-name = "ARR";
                 bindings = <
                     &kp ESC &trans &trans &trans &trans   &kp PG_UP &kp LA(LEFT) &kp UP   &kp LA(RIGHT)  &none
-                    &trans &trans &trans &trans &trans    &none &kp LEFT  &kp DOWN  &kp RIGHT &none
+                    &kp TAB &trans &trans &trans &trans    &none &kp LEFT  &kp DOWN  &kp RIGHT &none
                     &trans &trans &trans &trans &trans    &kp PG_DN  &kp HOME  &none    &kp END   &none
                                   &trans &trans &trans    &trans &trans    &trans
                 >;
@@ -148,7 +148,7 @@
             display-name = "NUM";
                 bindings = <
                     &kp ESC &trans &trans &trans &trans   &none &kp N7 &kp N8 &kp N9 &none
-                    &trans &trans &trans &trans &trans    &none &kp N4 &kp N5 &kp N6 &none
+                    &kp TAB &trans &trans &trans &trans    &none &kp N4 &kp N5 &kp N6 &none
                     &trans &trans &trans &trans &trans    &none &kp N1 &kp N2 &kp N3 &none
                                   &trans &trans &trans    &trans &kp N0 &trans
                 >;
@@ -174,16 +174,6 @@
                     &trans &trans &trans &trans &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
                     &trans &trans &trans &trans &trans    &kp F10  &kp F1 &kp F2  &kp F3  &none
                                   &trans &trans &trans    &trans &trans &trans
-                >;
-            };
-
-            cmd_layer {
-                display-name = "CMD";
-                bindings = <
-                    &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans
-                    &trans &trans &trans &trans &kp TAB          &trans &trans &trans &trans &trans
-                    &trans &trans &trans &trans &trans           &trans &trans &trans &trans &trans
-                                         &trans &trans &trans    &trans &trans &trans
                 >;
             };
 
