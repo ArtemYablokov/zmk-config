@@ -55,6 +55,17 @@
             bindings = <&kp LSHIFT>;
         };
 
+        // Click 31 + 34 simultaneously
+        // This will override the individual layer-hold behaviors
+        thumb_action_combo {
+            timeout-ms = <50>;
+            key-positions = <31 34>;
+            bindings = <&kp LG(TAB)>;
+
+            // This ensures it only triggers on a fresh "click" // ???
+            layers = <0>;
+        };
+
 
         // Parentheses
         combo_lpar { timeout-ms = <50>; key-positions = <2 3>; bindings = <&kp LPAR>; };
