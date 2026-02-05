@@ -5,9 +5,8 @@
  */
 
 #include <behaviors.dtsi>
-#include <dt-bindings/zmk/keys.h>
 #include <dt-bindings/zmk/bt.h>
-
+#include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
 #define BRC 1
@@ -18,9 +17,7 @@
 #define CMD 6
 
 / {
-  chosen {
-    zmk,matrix_transform = &five_column_transform;
-  };
+    chosen { zmk,matrix_transform = &five_column_transform; };
 };
 
 / {
@@ -28,6 +25,7 @@
         compatible = "zmk,combos";
 
         // F + J = Caps Word (Turns off on Space)
+
         combo_caps_word {
             timeout-ms = <70>;
             key-positions = <13 16>;
@@ -35,6 +33,7 @@
         };
 
         // R + U = Hard Caps Lock (Traditional Toggle)
+
         combo_caps_lock {
             timeout-ms = <70>;
             key-positions = <3 6>;
@@ -42,6 +41,7 @@
         };
 
         // Toggle F-Layer by pressing both inner thumbs (32 and 33)
+
         combo_f_layer {
             timeout-ms = <70>;
             key-positions = <32 33>;
@@ -49,6 +49,7 @@
         };
 
         // SHIFT (30 and 35)
+
         combo_shift {
             timeout-ms = <70>;
             key-positions = <30 35>;
@@ -57,28 +58,47 @@
 
         // Click 31 + 34 simultaneously
         // This will override the individual layer-hold behaviors
-        thumb_action_combo {
-            timeout-ms = <50>;
-            key-positions = <31 34>;
-            bindings = <&kp LG(TAB)>;
+        // Parentheses
 
-            // This ensures it only triggers on a fresh "click" // ???
-            layers = <0>;
+        combo_lpar {
+            timeout-ms = <50>;
+            key-positions = <2 3>;
+            bindings = <&kp LPAR>;
         };
 
-
-        // Parentheses
-        combo_lpar { timeout-ms = <50>; key-positions = <2 3>; bindings = <&kp LPAR>; };
-        combo_rpar { timeout-ms = <50>; key-positions = <6 7>; bindings = <&kp RPAR>; };
+        combo_rpar {
+            timeout-ms = <50>;
+            key-positions = <6 7>;
+            bindings = <&kp RPAR>;
+        };
 
         // Square Brackets
-        combo_lbkt { timeout-ms = <50>; key-positions = <12 13>; bindings = <&kp LBKT>; };
-        combo_rbkt { timeout-ms = <50>; key-positions = <16 17>; bindings = <&kp RBKT>; };
+
+        combo_lbkt {
+            timeout-ms = <50>;
+            key-positions = <12 13>;
+            bindings = <&kp LBKT>;
+        };
+
+        combo_rbkt {
+            timeout-ms = <50>;
+            key-positions = <16 17>;
+            bindings = <&kp RBKT>;
+        };
 
         // Curly Brackets
-        combo_lbrc { timeout-ms = <50>; key-positions = <22 23>; bindings = <&kp LBRC>; };
-        combo_rbrc { timeout-ms = <50>; key-positions = <26 27>; bindings = <&kp RBRC>; };
 
+        combo_lbrc {
+            timeout-ms = <50>;
+            key-positions = <22 23>;
+            bindings = <&kp LBRC>;
+        };
+
+        combo_rbrc {
+            timeout-ms = <50>;
+            key-positions = <26 27>;
+            bindings = <&kp RBRC>;
+        };
     };
 };
 
@@ -96,6 +116,7 @@
 
         // Refined Home Row Shift
         // require-prior-idle-ms ensures no accidental shifts while typing fast.
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -103,92 +124,90 @@
             quick-tap-ms = <125>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
+
             require-prior-idle-ms = <150>;
         };
     };
 };
 
 / {
-        keymap {
-            compatible = "zmk,keymap";
+    keymap {
+        compatible = "zmk,keymap";
 
-            default_layer {
+        default_layer {
             display-name = "DEF";
-                bindings = <
-                    &kp Q &kp W &kp E &kp R &kp T             &kp Y &kp U  &kp I  &kp O   &kp P
-                    &kp A &kp S &kp D &hm LSHIFT F &kp G      &kp H &hm RSHIFT J &kp K &kp L &hm RCTRL SEMI
-                    &kp Z &kp X &kp C &kp V &kp B             &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
-
-                        &esc_cmd LALT ESC   &kp  LGUI    &lt  NUM ENTER
-
-                        &lt ARR TAB      &lt BRC SPACE     &lt SYM  BSPC
-                >;
-            };
-
-
-            // " ( ) '
-            // + [ ] -
-            // = { } _
-            // Layer 1: Brackets & Math
-            // ESC           ` ' " ~
-            //               | + - =
-            //               \ _
-            brackets_layer {
-            display-name = "BRC";
-                bindings = <
-                    &kp ESC &trans &trans &trans &trans     &kp GRAVE &kp SQT   &kp DQT    &none      &kp TILDE
-                    &kp TAB &trans &trans &trans &trans      &kp PIPE  &kp PLUS  &kp MINUS  &kp EQUAL  &none
-                    &trans &trans &trans &trans &trans      &kp BSLH  &kp UNDER &none      &none      &none
-                                  &trans &trans &trans      &trans    &trans    &trans
-                >;
-            };
-
-            // Layer 2: Navigation (Arrows & Page Keys)
-            nav_layer {
-            display-name = "ARR";
-                bindings = <
-                    &kp ESC &trans &trans &trans &trans   &kp PG_UP &kp LA(LEFT) &kp UP   &kp LA(RIGHT)  &none
-                    &kp TAB &trans &trans &trans &trans    &none &kp LEFT  &kp DOWN  &kp RIGHT &none
-                    &trans &trans &trans &trans &trans    &kp PG_DN  &kp HOME  &none    &kp END   &none
-                                  &trans &trans &trans    &trans &trans    &trans
-                >;
-            };
-
-            // Layer 3: Numpad (7 8 9 | 4 5 6 | 1 2 3)
-            numpad_layer {
-            display-name = "NUM";
-                bindings = <
-                    &kp ESC &trans &trans &trans &trans   &none &kp N7 &kp N8 &kp N9 &none
-                    &kp TAB &trans &trans &trans &trans    &none &kp N4 &kp N5 &kp N6 &none
-                    &trans &trans &trans &trans &trans    &none &kp N1 &kp N2 &kp N3 &none
-                                  &trans &trans &trans    &trans &kp N0 &trans
-                >;
-            };
-
-            // Layer 4: Symbols (! @ # $ % ^ & *) + BT
-            symbol_layer {
-            display-name = "SYM";
-                bindings = <
-                    &bt BT_CLR &trans &trans &trans &trans                              &none &kp AMPS &kp ASTRK     &none  &none
-                    &bt BT_SEL 0 &bt BT_SEL 1 &bt BT_SEL 2 &bt BT_SEL 3 &bt BT_SEL 4    &none &kp DLLR &kp PRCNT &kp CARET &none
-                    &trans &trans &trans &trans &trans                                  &none &kp EXCL &kp AT    &kp HASH     &none
-                                  &trans &trans &trans                                  &trans &trans &trans
-                >;
-            };
-
-
-            // Layer 5: FF
-            f_layer {
-                display-name = "FF";
-                bindings = <
-                    &trans &trans &trans &trans &trans    &kp F12  &kp F7  &kp F8  &kp F9  &none
-                    &trans &trans &trans &trans &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
-                    &trans &trans &trans &trans &trans    &kp F10  &kp F1 &kp F2  &kp F3  &none
-                                  &trans &trans &trans    &trans &trans &trans
-                >;
-            };
-
+            bindings = <
+  &kp Q  &kp W  &kp E              &kp R         &kp T            &kp Y        &kp U          &kp I         &kp O    &kp P
+  &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G            &kp H        &hm RSHIFT J   &kp K         &kp L    &hm RCTRL SEMI
+  &kp Z  &kp X  &kp C              &kp V         &kp B            &kp N        &kp M          &kp COMMA     &kp DOT  &kp FSLH
+                &esc_cmd LALT ESC  &kp LGUI      &lt NUM ENTER    &lt ARR TAB  &lt BRC SPACE  &lt SYM BSPC
+            >;
         };
+
+        // " ( ) '
+        // + [ ] -
+        // = { } _
+        // Layer 1: Brackets & Math
+        // ESC           ` ' " ~
+        //               | + - =
+        //               \ _
+
+        brackets_layer {
+            display-name = "BRC";
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &kp GRAVE  &kp SQT    &kp DQT    &none      &kp TILDE
+  &trans  &trans  &trans  &trans  &trans    &kp PIPE   &kp PLUS   &kp MINUS  &kp EQUAL  &none
+  &trans  &trans  &trans  &trans  &trans    &kp BSLH   &kp UNDER  &none      &none      &none
+                  &trans  &trans  &trans    &trans     &trans     &trans
+            >;
+        };
+
+        // Layer 2: Navigation (Arrows & Page Keys)
+
+        nav_layer {
+            display-name = "ARR";
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none
+  &trans  &trans  &trans  &trans  &trans    &none      &kp LEFT      &kp DOWN  &kp RIGHT      &none
+  &trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp HOME      &none     &kp END        &none
+                  &trans  &trans  &trans    &trans     &trans        &trans
+            >;
+        };
+
+        // Layer 3: Numpad (7 8 9 | 4 5 6 | 1 2 3)
+
+        numpad_layer {
+            display-name = "NUM";
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &none   &kp N7  &kp N8  &kp N9  &none
+  &trans  &trans  &trans  &trans  &trans    &none   &kp N4  &kp N5  &kp N6  &none
+  &trans  &trans  &trans  &trans  &trans    &none   &kp N1  &kp N2  &kp N3  &none
+                  &trans  &trans  &trans    &trans  &kp N0  &trans
+            >;
+        };
+
+        // Layer 4: Symbols (! @ # $ % ^ & *) + BT
+
+        symbol_layer {
+            display-name = "SYM";
+            bindings = <
+  &bt BT_CLR    &trans        &trans        &trans        &trans          &none   &kp AMPS  &kp ASTRK  &none      &none
+  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &kp DLLR  &kp PRCNT  &kp CARET  &none
+  &trans        &trans        &trans        &trans        &trans          &none   &kp EXCL  &kp AT     &kp HASH   &none
+                              &trans        &trans        &trans          &trans  &trans    &trans
+            >;
+        };
+
+        // Layer 5: FF
+
+        f_layer {
+            display-name = "FF";
+            bindings = <
+  &trans  &trans  &trans  &trans  &trans    &kp F12  &kp F7  &kp F8  &kp F9  &none
+  &trans  &trans  &trans  &trans  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
+  &trans  &trans  &trans  &trans  &trans    &kp F10  &kp F1  &kp F2  &kp F3  &none
+                  &trans  &trans  &trans    &trans   &trans  &trans
+            >;
+        };
+    };
 };
-
-
