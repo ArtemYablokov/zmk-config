@@ -84,15 +84,6 @@
 
 / {
     behaviors {
-        // Tap = Tab, Hold = Transparent (letting the layer below through)
-        tab_trans: tab_trans {
-            compatible = "zmk,behavior-hold-tap";
-            #binding-cells = <2>;
-            flavor = "tap-preferred";
-            tapping-term-ms = <200>;
-            bindings = <&trans>, <&kp>;
-    };
-
         esc_cmd: esc_cmd {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -128,7 +119,7 @@
                     &kp A &hm LALT S &hm LGUI D &hm LSHIFT F &kp G       &kp H  &hm RSHIFT J &hm RGUI K &hm RALT L &hm RCTRL SEMI
                     &kp Z &kp X &kp C &kp V &kp B                  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
-                        &esc_cmd LALT ESC  &lt 6 LGUI    &lt  NUM TAB
+                        &esc_cmd LALT ESC   &kp  LGUI    &lt  NUM TAB
 
                         &lt ARR ENTER     &lt BRC SPACE     &lt SYM  BSPC
                 >;
@@ -194,20 +185,6 @@
                     &trans &trans &trans &trans &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
                     &trans &trans &trans &trans &trans    &kp F10  &kp F1 &kp F2  &kp F3  &none
                                   &trans &trans &trans    &trans &trans &trans
-                >;
-            };
-
-            cmd_hold_layer {
-                display-name = "CMD";
-                bindings = <
-                    &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
-                    &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
-                    &trans &trans &trans &trans &trans    &trans &trans &trans &trans &trans
-
-                    // 31: Sustains the Command hold
-                    // 32: Normal transparent
-                    // 33: The Special Tab/Trans key
-                     &trans &kp LGUI &trans         &tab_trans 0 TAB &trans &trans
                 >;
             };
 
