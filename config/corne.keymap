@@ -119,7 +119,7 @@
                     &kp A &kp S  &hm LSHIFT D  &hm LGUI F &kp G       &kp H &hm RCTRL  J &hm RSHIFT  K &kp L &kp SEMI
                     &kp Z &kp X &kp C &kp V &kp B                  &kp N &kp M  &kp COMMA &kp DOT &kp FSLH
 
-                        &esc_cmd LALT ESC   &kp  LGUI    &lt  NUM TAB
+                        &lt  NUM TAB   &esc_cmd LALT ESC   &kp  LGUI
 
                         &lt ARR ENTER     &lt BRC SPACE     &lt SYM  BSPC
                 >;
