@@ -120,8 +120,8 @@
             #binding-cells = <2>;
             flavor = "tap-preferred";
             tapping-term-ms = <150>;
-            quick-tap-ms = <125>;
-            hold-trigger-on-release;
+            // quick-tap-ms = <125>;
+            // hold-trigger-on-release;
             bindings = <&kp>, <&kp>;
         };
 
