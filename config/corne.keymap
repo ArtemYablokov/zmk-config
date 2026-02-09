@@ -227,7 +227,7 @@
             display-name = "CMD";
             bindings = <
   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
-  &trans  &trans  &trans  &trans  &kp TAP    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &kp TAB    &trans  &trans  &trans  &trans  &trans
   &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
                   &trans  &trans  &kp LGUI    &trans   &trans  &trans
             >;
