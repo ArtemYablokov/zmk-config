@@ -150,9 +150,9 @@
         default_layer {
             display-name = "DEF";
             bindings = <
-  &kp Q  &kp W  &kp E        &kp R              &kp T       &kp Y          &kp U          &kp I        &kp O    &kp P
-  &kp A  &kp S  &kp D        &hm LSHIFT F       &kp G       &kp H          &hm RSHIFT J   &kp K        &kp L    &hm RCTRL SEMI
-  &kp Z  &kp X  &kp C        &kp V              &kp B       &kp N          &kp M          &kp COMMA    &kp DOT  &kp FSLH
+  &kp Q  &kp W  &kp E        &kp R              &kp T       &kp Y          &kp U          &kp I                 &kp O    &kp P
+  &kp A  &kp S  &kp D        &hm LSHIFT F       &kp G       &kp H          &hm RSHIFT J   &kp K                 &kp L    &hm RCTRL SEMI
+  &kp Z  &kp X  &kp C        &kp V              &kp B       &kp N          &kp M          &kp COMMA             &kp DOT  &kp FSLH
                 &lt NUM ESC  &esc_cmd LALT TAB  &kp LGUI    &lt ARR ENTER  &lt SYM SPACE  &esc_cmd RSHIFT BSPC
             >;
         };
@@ -168,10 +168,10 @@
         brackets_layer {
             display-name = "SYM";
             bindings = <
-  &none  &kp AMPS  &kp ASTRK  &kp QMARK  &none     &kp GRAVE  &kp SQT   &kp DQT    &none      &kp TILDE
-  &none  &kp DLLR  &kp PRCNT  &kp CARET  &none     &kp UNDER  &kp PLUS  &kp MINUS  &kp EQUAL  &kp COLON
-  &none  &kp EXCL  &kp AT     &kp HASH   &none     &none      &kp LT    &kp GT     &kp PIPE   &kp BACKSLASH
-                   &trans     &trans     &trans    &trans     &trans    &trans
+  &none  &kp AMPS  &kp ASTRK  &kp QMARK  &none     &kp GRAVE  &kp SQT       &kp DQT    &none      &kp TILDE
+  &none  &kp DLLR  &kp PRCNT  &kp CARET  &none     &kp PIPE   &kp PLUS      &kp MINUS  &kp EQUAL  &kp COLON
+  &none  &kp EXCL  &kp AT     &kp HASH   &none     &kp UNDER  &kp QUESTION  &kp LT     &kp GT     &kp BACKSLASH
+                   &trans     &trans     &trans    &trans     &trans        &trans
             >;
         };
 
@@ -192,10 +192,10 @@
         numpad_layer {
             display-name = "NUM";
             bindings = <
-  &bt BT_CLR    &trans        &trans        &trans        &trans          &none  &kp N7  &kp N8  &kp N9  &none
-  &trans        &trans        &trans        &trans        &trans          &none  &kp N4  &kp N5  &kp N6  &none
-  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none  &kp N1  &kp N2  &kp N3  &none
-                                                &trans  &trans  &trans    &trans &kp N0  &trans
+  &bt BT_CLR    &trans        &trans        &trans        &trans          &none   &kp N7  &kp N8  &kp N9  &none
+  &trans        &trans        &trans        &trans        &trans          &none   &kp N4  &kp N5  &kp N6  &none
+  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &none   &kp N1  &kp N2  &kp N3  &none
+                              &trans        &trans        &trans          &trans  &kp N0  &trans
             >;
         };
 
@@ -204,10 +204,10 @@
         symbol_layer {
             display-name = "BT";
             bindings = <
-      &trans  &trans  &trans  &trans  &trans                                &trans  &trans  &trans  &trans  &trans
-      &trans  &trans  &trans  &trans  &trans                                &trans  &trans  &trans  &trans  &trans
-      &trans  &trans  &trans  &trans  &trans                                &trans  &trans  &trans  &trans  &trans
-                              &trans        &trans        &trans          &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans    &trans  &trans  &trans  &trans  &trans
+                  &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
 
