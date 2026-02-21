@@ -48,27 +48,6 @@
             bindings = <&mo 5>;
         };
 
-        // SHIFT (30 and 35)
-
-        combo_shift {
-            timeout-ms = <70>;
-            key-positions = <30 35>;
-            bindings = <&kp LSHIFT>;
-        };
-
-        // Click 31 + 34 simultaneously
-        // This will override the individual layer-hold behaviors
-
-        tab_combo {
-            timeout-ms = <50>;
-            key-positions = <12 17>;
-            bindings = <&kp LG(TAB)>;
-
-            // This ensures it only triggers on a fresh "click" // ???
-
-            layers = <0>;
-        };
-
         // Parentheses
 
         combo_lpar {
@@ -111,10 +90,6 @@
             bindings = <&kp RBRC>;
         };
 
-        tab {
-            bindings = <&kp TAB>;
-            key-positions = <11 12>;
-        };
     };
 };
 
