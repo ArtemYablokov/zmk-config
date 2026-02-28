@@ -91,13 +91,13 @@
         };
 
         // < >
-        combo_lbrc {
+        combo_lt {
             timeout-ms = <40>;
             key-positions = <11 12>;
             bindings = <&kp LT>;
         };
 
-        combo_rbrc {
+        combo_gt {
             timeout-ms = <40>;
             key-positions = <17 18>;
             bindings = <&kp GT>;
