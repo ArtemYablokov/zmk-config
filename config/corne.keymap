@@ -32,11 +32,11 @@
             bindings = <&caps_word>;
         };
 
-        // R + U = Hard Caps Lock (Traditional Toggle)
+        // V + M = Hard Caps Lock (Traditional Toggle)
 
         combo_caps_lock {
             timeout-ms = <70>;
-            key-positions = <3 6>;
+            key-positions = <23 26>;
             bindings = <&kp CAPS>;
         };
 
