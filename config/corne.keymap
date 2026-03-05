@@ -33,6 +33,20 @@
             bindings = <&kp I &kp N>;
             label = "IN_MACRO";
         };
+
+        tion_macro: tion_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp I &kp O &kp N>;
+            label = "TION_MACRO";
+        };
+
+        the_macro: the_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp H &kp E>;
+            label = "THE_MACRO";
+        };
     };
 
     combos {
@@ -127,6 +141,16 @@
         in_combo {
             bindings = <&in_macro>;
             key-positions = <30 31>;
+        };
+
+        tion_combo {
+            bindings = <&tion_macro>;
+            key-positions = <6 7>;
+        };
+
+        the_combo {
+            bindings = <&the_macro>;
+            key-positions = <18 19>;
         };
     };
 
