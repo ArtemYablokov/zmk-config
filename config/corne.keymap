@@ -20,8 +20,24 @@
     chosen { };
 };
 
+    macros {
+        th_macro: th_macro {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp T &kp H>;
+        };
+    };
+
+
 / {
     combos {
+        compatible = "zmk,combos";
+        combo_th {
+            timeout-ms = <50>;
+            key-positions = <1 2>; // Replace with the index of your 2 buttons
+            bindings = <&th_macro>;
+        };
+
         compatible = "zmk,combos";
 
         // F + J = Caps Word (Turns off on Space)
