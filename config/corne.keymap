@@ -60,7 +60,7 @@
         compatible = "zmk,combos";
 
         combo_th {
-            timeout-ms = <50>;
+            timeout-ms = <30>;
             key-positions = <19 20>; // Replace with the index of your 2 buttons
             bindings = <&th_macro>;
         };
@@ -68,7 +68,7 @@
         // F + J = Caps Word (Turns off on Space)
 
         combo_caps_word {
-            timeout-ms = <40>;
+            timeout-ms = <30>;
             key-positions = <16 19>;
             bindings = <&caps_word>;
         };
@@ -76,7 +76,7 @@
         // V + M = Hard Caps Lock (Traditional Toggle)
 
         combo_caps_lock {
-            timeout-ms = <70>;
+            timeout-ms = <50>;
             key-positions = <4 7>;
             bindings = <&kp CAPS>;
         };
@@ -126,7 +126,7 @@
         };
 
         combo_rbrc {
-            timeout-ms = <35>;
+            timeout-ms = <30>;
             key-positions = <32 33>;
             bindings = <&kp RBRC>;
         };
@@ -134,21 +134,25 @@
         // < >
 
         in_combo {
+            timeout-ms = <30>;
             bindings = <&in_macro>;
             key-positions = <31 32>;
         };
 
         tion_combo {
+            timeout-ms = <30>;
             bindings = <&tion_macro>;
             key-positions = <7 8>;
         };
 
         the_combo {
+            timeout-ms = <30>;
             bindings = <&the_macro>;
             key-positions = <18 19>;
         };
 
         ing_combo {
+            timeout-ms = <30>;
             bindings = <&ing_macro>;
             key-positions = <15 16>;
         };
