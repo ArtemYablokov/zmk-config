@@ -121,13 +121,13 @@
 
         combo_lbrc {
             timeout-ms = <30>;
-            key-positions = <3 4>;
+            key-positions = <26 27>;
             bindings = <&kp LBRC>;
         };
 
         combo_rbrc {
             timeout-ms = <35>;
-            key-positions = <7 8>;
+            key-positions = <32 33>;
             bindings = <&kp RBRC>;
         };
 
