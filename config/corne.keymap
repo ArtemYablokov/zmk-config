@@ -30,13 +30,15 @@
 
     combos {
         compatible = "zmk,combos";
+
         combo_th {
             timeout-ms = <50>;
-            key-positions = <1 2>; // Replace with the index of your 2 buttons
+            key-positions = <31 32>; // Replace with the index of your 2 buttons
             bindings = <&th_macro>;
         };
 
         // F + J = Caps Word (Turns off on Space)
+
         combo_caps_word {
             timeout-ms = <70>;
             key-positions = <16 19>;
@@ -44,6 +46,7 @@
         };
 
         // V + M = Hard Caps Lock (Traditional Toggle)
+
         combo_caps_lock {
             timeout-ms = <70>;
             key-positions = <4 7>;
@@ -51,6 +54,7 @@
         };
 
         // Toggle F-Layer by pressing both inner thumbs (38 and 39)
+
         combo_f_layer {
             timeout-ms = <70>;
             key-positions = <38 39>;
@@ -58,6 +62,7 @@
         };
 
         // Parentheses
+
         combo_lpar {
             timeout-ms = <40>;
             key-positions = <2 3>;
@@ -71,6 +76,7 @@
         };
 
         // Square Brackets
+
         combo_lbkt {
             timeout-ms = <40>;
             key-positions = <14 15>;
@@ -84,6 +90,7 @@
         };
 
         // Curly Brackets
+
         combo_lbrc {
             timeout-ms = <40>;
             key-positions = <3 4>;
@@ -97,6 +104,7 @@
         };
 
         // < >
+
         combo_lt {
             timeout-ms = <40>;
             key-positions = <15 16>;
@@ -125,6 +133,7 @@
 
         // Refined Home Row Shift
         // require-prior-idle-ms ensures no accidental shifts while typing fast.
+
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
