@@ -61,7 +61,7 @@
 
         combo_th {
             timeout-ms = <50>;
-            key-positions = <31 32>; // Replace with the index of your 2 buttons
+            key-positions = <19 20>; // Replace with the index of your 2 buttons
             bindings = <&th_macro>;
         };
 
@@ -133,26 +133,14 @@
 
         // < >
 
-        combo_lt {
-            timeout-ms = <40>;
-            key-positions = <15 16>;
-            bindings = <&kp LT>;
-        };
-
-        combo_gt {
-            timeout-ms = <30>;
-            key-positions = <19 20>;
-            bindings = <&kp GT>;
-        };
-
         in_combo {
             bindings = <&in_macro>;
-            key-positions = <30 31>;
+            key-positions = <31 32>;
         };
 
         tion_combo {
             bindings = <&tion_macro>;
-            key-positions = <6 7>;
+            key-positions = <7 8>;
         };
 
         the_combo {
@@ -162,7 +150,7 @@
 
         ing_combo {
             bindings = <&ing_macro>;
-            key-positions = <16 17>;
+            key-positions = <15 16>;
         };
     };
 
