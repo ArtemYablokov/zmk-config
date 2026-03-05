@@ -125,29 +125,27 @@
             bindings = <&kp RBRC>;
         };
 
-
         combo_th {
             timeout-ms = <30>;
             key-positions = <19 20>; // Replace with the index of your 2 buttons
             bindings = <&th_macro>;
         };
 
-        tion_combo {
+        ing_combo {
             timeout-ms = <30>;
-            bindings = <&tion_macro>;
+            bindings = <&ing_macro>;
             key-positions = <7 8>;
         };
 
         the_combo {
             timeout-ms = <30>;
-            bindings = <&the_macro>;
+            bindings = <&tion_macro>;
             key-positions = <18 19>;
         };
 
-        ing_combo {
-            timeout-ms = <30>;
-            bindings = <&ing_macro>;
-            key-positions = <15 16>;
+        in_combo {
+            bindings = <&in_macro>;
+            key-positions = <32 31>;
         };
     };
 
