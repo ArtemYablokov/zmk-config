@@ -68,7 +68,7 @@
         // F + J = Caps Word (Turns off on Space)
 
         combo_caps_word {
-            timeout-ms = <70>;
+            timeout-ms = <40>;
             key-positions = <16 19>;
             bindings = <&caps_word>;
         };
@@ -92,13 +92,13 @@
         // Parentheses
 
         combo_lpar {
-            timeout-ms = <40>;
+            timeout-ms = <30>;
             key-positions = <2 3>;
             bindings = <&kp LPAR>;
         };
 
         combo_rpar {
-            timeout-ms = <40>;
+            timeout-ms = <30>;
             key-positions = <8 9>;
             bindings = <&kp RPAR>;
         };
@@ -106,13 +106,13 @@
         // Square Brackets
 
         combo_lbkt {
-            timeout-ms = <40>;
+            timeout-ms = <30>;
             key-positions = <14 15>;
             bindings = <&kp LBKT>;
         };
 
         combo_rbkt {
-            timeout-ms = <40>;
+            timeout-ms = <30>;
             key-positions = <20 21>;
             bindings = <&kp RBKT>;
         };
@@ -120,13 +120,13 @@
         // Curly Brackets
 
         combo_lbrc {
-            timeout-ms = <40>;
+            timeout-ms = <30>;
             key-positions = <3 4>;
             bindings = <&kp LBRC>;
         };
 
         combo_rbrc {
-            timeout-ms = <40>;
+            timeout-ms = <35>;
             key-positions = <7 8>;
             bindings = <&kp RBRC>;
         };
@@ -140,7 +140,7 @@
         };
 
         combo_gt {
-            timeout-ms = <40>;
+            timeout-ms = <30>;
             key-positions = <19 20>;
             bindings = <&kp GT>;
         };
