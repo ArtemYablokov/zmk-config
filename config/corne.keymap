@@ -59,12 +59,6 @@
     combos {
         compatible = "zmk,combos";
 
-        combo_th {
-            timeout-ms = <30>;
-            key-positions = <19 20>; // Replace with the index of your 2 buttons
-            bindings = <&th_macro>;
-        };
-
         // F + J = Caps Word (Turns off on Space)
 
         combo_caps_word {
@@ -131,15 +125,13 @@
             bindings = <&kp RBRC>;
         };
 
-        // < >
 
-        in_combo {
+        combo_th {
             timeout-ms = <30>;
-            bindings = <&in_macro>;
-            key-positions = <31 32>;
+            key-positions = <19 20>; // Replace with the index of your 2 buttons
+            bindings = <&th_macro>;
         };
 
-<<<<<<< HEAD
         tion_combo {
             timeout-ms = <30>;
             bindings = <&tion_macro>;
@@ -157,17 +149,6 @@
             bindings = <&ing_macro>;
             key-positions = <15 16>;
         };
-=======
-        ing_combo {
-            bindings = <&ing_macro>;
-            key-positions = <7 8>;
-        };
-
-        tion_combo {
-            bindings = <&tion_macro>;
-            key-positions = <18 19>;
-        };
->>>>>>> origin/main
     };
 
     behaviors {
