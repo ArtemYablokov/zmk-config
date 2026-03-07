@@ -134,18 +134,23 @@
         ing_combo {
             timeout-ms = <30>;
             bindings = <&ing_macro>;
-            key-positions = <7 8>;
+            key-positions = <7 8 9>;
         };
 
-        the_combo {
+        tion_combo {
             timeout-ms = <30>;
             bindings = <&tion_macro>;
-            key-positions = <18 19>;
+            key-positions = <32 31>;
         };
 
         in_combo {
             bindings = <&in_macro>;
-            key-positions = <32 31>;
+            key-positions = <7 8>;
+        };
+
+        combo_th {
+            bindings = <&the_macro>;
+            key-positions = <19 20 21>;
         };
     };
 
@@ -192,9 +197,9 @@
         default_layer {
             display-name = "DEF";
             bindings = <
-&kp TAB         &kp Q  &kp W  &kp C              &kp R         &kp K          &kp Y          &kp U               &kp I        &kp O       &kp P           &kp BACKSPACE
-&kp LEFT_SHIFT  &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G          &kp H          &hm RSHIFT E        &kp T        &kp L       &hm RCTRL SEMI  &kp RIGHT_SHIFT
-&kp ESCAPE      &kp Z  &kp X  &kp J              &kp V         &kp B          &kp N          &kp M               &kp COMMA    &kp PERIOD  &kp FSLH        &kp ENTER
+&kp TAB         &kp Q  &kp W  &kp C              &kp R         &kp K          &kp Y          &kp U          &kp I        &kp O       &kp P           &kp BACKSPACE
+&kp LEFT_SHIFT  &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G          &kp H          &hm RSHIFT E   &kp T        &kp L       &hm RCTRL SEMI  &kp RIGHT_SHIFT
+&kp ESCAPE      &kp Z  &kp X  &kp J              &kp V         &kp B          &kp N          &kp M          &kp COMMA    &kp PERIOD  &kp FSLH        &kp ENTER
                               &esc_cmd LALT ESC  &kp LGUI      &lt NUM TAB    &lt ARR ENTER  &lt SYM SPACE  &lt FF BSPC
             >;
         };
