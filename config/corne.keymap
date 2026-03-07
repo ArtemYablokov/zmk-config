@@ -148,7 +148,7 @@
             key-positions = <7 8>;
         };
 
-        combo_th {
+        combo_the {
             bindings = <&the_macro>;
             key-positions = <19 20 21>;
         };
