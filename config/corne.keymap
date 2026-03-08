@@ -224,9 +224,9 @@
         nav_layer {
             display-name = "ARR";
             bindings = <
-&none  &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none  &none
-&none  &trans  &trans  &trans  &trans  &trans    &none      &kp LEFT      &kp DOWN  &kp RIGHT      &none  &none
-&none  &trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp HOME      &none     &kp END        &none  &none
+&none  &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none   &none
+&none  &trans  &trans  &trans  &trans  &trans    &none      &kp LEFT      &kp DOWN  &kp RIGHT      &trans  &none
+&none  &trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp HOME      &none     &kp END        &none   &none
                        &trans  &trans  &trans    &trans     &trans        &trans
             >;
         };
