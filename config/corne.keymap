@@ -75,12 +75,12 @@
             bindings = <&kp CAPS>;
         };
 
-        // Toggle F-Layer by pressing both inner thumbs (38 and 39)
+        // Toggle NUM-Layer by pressing both inner thumbs (38 and 39)
 
-        combo_f_layer {
+        combo_num_layer {
             timeout-ms = <70>;
             key-positions = <38 39>;
-            bindings = <&mo 4>;
+            bindings = <&mo 3>;
         };
 
         // Parentheses
@@ -175,12 +175,12 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <175>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <125>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
-            require-prior-idle-ms = <125>;
+            // require-prior-idle-ms = <125>; // remove since blocks me from immediate trigger shift after BSPC
         };
 
         lt_fast: fast_layer_tap {
@@ -202,7 +202,7 @@
 &kp TAB         &kp Q  &kp W  &kp C              &kp R         &kp K               &kp Y               &kp U             &kp I       &kp O       &kp P           &kp BACKSPACE
 &kp LEFT_SHIFT  &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G               &kp H               &hm RSHIFT E      &kp T       &kp L       &hm RCTRL SEMI  &kp RIGHT_SHIFT
 &kp ESCAPE      &kp Z  &kp X  &kp J              &kp V         &kp B               &kp N               &kp M             &kp COMMA   &kp PERIOD  &kp FSLH        &kp ENTER
-                              &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast 5 SPACE  &lt 3 BSPC
+                              &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast FF SPACE  &lt BT BSPC
             >;
         };
 
