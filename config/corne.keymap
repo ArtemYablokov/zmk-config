@@ -18,6 +18,7 @@
 
 / {
     chosen {
+        zmk,matrix_transform = &five_column_transform;
     };
 
     macros {
@@ -63,7 +64,7 @@
 
         combo_caps_word {
             timeout-ms = <40>; // 30 - too harsh
-            key-positions = <16 19>;
+            key-positions = <13 16>;
             bindings = <&caps_word>;
         };
 
@@ -71,15 +72,15 @@
 
         combo_caps_lock {
             timeout-ms = <50>;
-            key-positions = <4 7>;
+            key-positions = <3 6>;
             bindings = <&kp CAPS>;
         };
 
-        // Toggle NUM-Layer by pressing both inner thumbs (38 and 39)
+        // Toggle NUM-Layer by pressing both inner thumbs (32 and 33)
 
         combo_num_layer {
             timeout-ms = <70>;
-            key-positions = <38 39>;
+            key-positions = <32 33>;
             bindings = <&mo 3>;
         };
 
@@ -87,13 +88,13 @@
 
         combo_lpar {
             timeout-ms = <40>;
-            key-positions = <2 3>;
+            key-positions = <1 2>;
             bindings = <&kp LPAR>;
         };
 
         combo_rpar {
             timeout-ms = <50>; // somehow right parentheses works bad for me
-            key-positions = <8 9>;
+            key-positions = <7 8>;
             bindings = <&kp RPAR>;
         };
 
@@ -101,13 +102,13 @@
 
         combo_lbkt {
             timeout-ms = <40>;
-            key-positions = <14 15>;
+            key-positions = <11 12>;
             bindings = <&kp LBKT>;
         };
 
         combo_rbkt {
             timeout-ms = <40>;
-            key-positions = <20 21>;
+            key-positions = <17 18>;
             bindings = <&kp RBKT>;
         };
 
@@ -115,44 +116,44 @@
 
         combo_lbrc {
             timeout-ms = <40>;
-            key-positions = <26 27>;
+            key-positions = <21 22>;
             bindings = <&kp LBRC>;
         };
 
         combo_rbrc {
             timeout-ms = <40>;
-            key-positions = <32 33>;
+            key-positions = <27 28>;
             bindings = <&kp RBRC>;
         };
 
         combo_th {
             timeout-ms = <40>;
-            key-positions = <19 20>; // Replace with the index of your 2 buttons
+            key-positions = <16 17>; // Replace with the index of your 2 buttons
             bindings = <&th_macro>;
         };
 
         ing_combo {
             timeout-ms = <75>;
             bindings = <&ing_macro>;
-            key-positions = <7 8 9>;
+            key-positions = <6 7 8>;
         };
 
         tion_combo {
             timeout-ms = <75>;
             bindings = <&tion_macro>;
-            key-positions = <32 31>;
+            key-positions = <27 26>;
         };
 
         in_combo {
             timeout-ms = <40>;
             bindings = <&in_macro>;
-            key-positions = <7 8>;
+            key-positions = <6 7>;
         };
 
         combo_the {
             timeout-ms = <75>;
             bindings = <&the_macro>;
-            key-positions = <19 20 21>;
+            key-positions = <16 17 18>;
         };
     };
 
@@ -199,9 +200,9 @@
         default_layer {
             display-name = "DEF";
             bindings = <
-&none         &kp Q  &kp W  &kp C              &kp R         &kp K               &kp Y               &kp U             &kp I       &kp O       &kp P           none
-&none  &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G               &kp H               &hm RSHIFT E      &kp T       &kp L       &hm RCTRL SEMI  &none
-&none      &kp Z  &kp X  &kp J              &kp V         &kp B               &kp N               &kp M             &kp COMMA   &kp PERIOD  &kp FSLH        &none
+&kp Q  &kp W  &kp C              &kp R         &kp K               &kp Y               &kp U             &kp I       &kp O       &kp P
+&kp A  &kp S  &kp D              &hm LSHIFT F  &kp G               &kp H               &hm RSHIFT E      &kp T       &kp L       &hm RCTRL SEMI
+&kp Z  &kp X  &kp J              &kp V         &kp B               &kp N               &kp M             &kp COMMA   &kp PERIOD  &kp FSLH
                               &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast FF SPACE  &lt BT BSPC
             >;
         };
@@ -214,9 +215,9 @@
         brackets_layer {
             display-name = "SYM";
             bindings = <
-&none  &none  &kp AMPS  &kp ASTRK  &none      &none     &kp GRAVE      &kp SQT    &kp DQT    &kp EXCL   &kp TILDE     &none
-&none  &none  &kp DLLR  &kp PRCNT  &kp CARET  &none     &kp PIPE       &kp PLUS   &kp MINUS  &kp EQUAL  &kp COLON     &none
-&none  &none  &kp EXCL  &kp AT     &kp HASH   &none     &kp BACKSLASH  &kp UNDER  &kp LT     &kp GT     &kp QUESTION  &none
+&none  &kp AMPS  &kp ASTRK  &none      &none     &kp GRAVE      &kp SQT    &kp DQT    &kp EXCL   &kp TILDE
+&none  &kp DLLR  &kp PRCNT  &kp CARET  &none     &kp PIPE       &kp PLUS   &kp MINUS  &kp EQUAL  &kp COLON
+&none  &kp EXCL  &kp AT     &kp HASH   &none     &kp BACKSLASH  &kp UNDER  &kp LT     &kp GT     &kp QUESTION
                         &trans     &trans     &trans    &trans         &trans     &trans
             >;
         };
@@ -226,9 +227,9 @@
         nav_layer {
             display-name = "ARR";
             bindings = <
-&none  &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none   &none
-&none  &trans  &trans  &trans  &trans  &trans    &none      &kp LEFT      &kp DOWN  &kp RIGHT      &trans  &none
-&none  &trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp HOME      &none     &kp END        &none   &none
+&trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none
+&trans  &trans  &trans  &trans  &trans    &none      &kp LEFT      &kp DOWN  &kp RIGHT      &trans
+&trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp HOME      &none     &kp END        &none
                        &trans  &trans  &trans    &trans     &trans        &trans
             >;
         };
@@ -238,9 +239,9 @@
         numpad_layer {
             display-name = "NUM";
             bindings = <
-&none  &trans  &trans  &trans  &trans  &trans    &none   &kp N7  &kp N8  &kp N9  &none   &none
-&none  &trans  &trans  &trans  &trans  &trans    &none   &kp N4  &kp N5  &kp N6  &trans  &none
-&none  &trans  &trans  &trans  &trans  &trans    &kp N0  &kp N1  &kp N2  &kp N3  &none   &none
+&trans  &trans  &trans  &trans  &trans    &none   &kp N7  &kp N8  &kp N9  &none
+&trans  &trans  &trans  &trans  &trans    &none   &kp N4  &kp N5  &kp N6  &trans
+&trans  &trans  &trans  &trans  &trans    &kp N0  &kp N1  &kp N2  &kp N3  &none
                        &trans  &trans  &trans    &trans  &trans  &trans
             >;
         };
@@ -250,9 +251,9 @@
         symbol_layer {
             display-name = "BT";
             bindings = <
-&none  &bt BT_CLR    &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &none
-&none  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans  &none
-&none  &trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans  &none
+&bt BT_CLR    &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans
+&bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4    &trans  &trans  &trans  &trans  &trans
+&trans        &trans        &trans        &trans        &trans          &trans  &trans  &trans  &trans  &trans
                                    &trans        &trans        &trans          &trans  &trans  &trans
             >;
         };
@@ -262,9 +263,9 @@
         f_layer {
             display-name = "FF";
             bindings = <
-&none  &trans  &trans  &trans  &trans  &trans    &kp F12  &kp F7  &kp F8  &kp F9  &none  &none
-&none  &trans  &trans  &trans  &trans  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none  &none
-&none  &trans  &trans  &trans  &trans  &trans    &kp F10  &kp F1  &kp F2  &kp F3  &none  &none
+&trans  &trans  &trans  &trans  &trans    &kp F12  &kp F7  &kp F8  &kp F9  &none
+&trans  &trans  &trans  &trans  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
+&trans  &trans  &trans  &trans  &trans    &kp F10  &kp F1  &kp F2  &kp F3  &none
                        &trans  &trans  &trans    &trans   &trans  &trans
             >;
         };
