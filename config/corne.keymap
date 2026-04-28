@@ -84,9 +84,9 @@
 
         // Toggle RUS-Layer by CLICKING both outer thumbs (30 and 35)
 
-        combo_bt_layer {
+        combo_rus_layer {
             timeout-ms = <50>;
-            key-positions = <32 33>;
+            key-positions = <30 35>;
             bindings = <&tg 6>;
         };
 
@@ -142,25 +142,13 @@
         ing_combo {
             timeout-ms = <75>;
             bindings = <&ing_macro>;
-            key-positions = <6 7 8>;
+            key-positions = <6 7>;
         };
 
         tion_combo {
             timeout-ms = <75>;
             bindings = <&tion_macro>;
             key-positions = <27 26>;
-        };
-
-        in_combo {
-            timeout-ms = <40>;
-            bindings = <&in_macro>;
-            key-positions = <6 7>;
-        };
-
-        combo_the {
-            timeout-ms = <75>;
-            bindings = <&the_macro>;
-            key-positions = <16 17 18>;
         };
     };
 
