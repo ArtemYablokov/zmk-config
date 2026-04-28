@@ -87,9 +87,8 @@
         combo_rus_layer {
             timeout-ms = <50>;
             key-positions = <30 35>;
-            bindings = <&tg 6>;
+            bindings = <&tog 6>;
         };
-
 
         // Parentheses
 
@@ -266,6 +265,7 @@
         };
 
         // Layer 6: RUS
+
         rus_layer {
             display-name = "RUS";
             bindings = <
