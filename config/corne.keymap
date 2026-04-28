@@ -14,7 +14,7 @@
 #define NUM 3
 #define BT 4
 #define FF 5
-#define CMD 6
+#define RUS 6
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
@@ -74,13 +74,22 @@
             bindings = <&kp CAPS>;
         };
 
-        // Toggle NUM-Layer by pressing both inner thumbs (32 and 33)
+        // Toggle BT-Layer by pressing both inner thumbs (32 and 33)
 
-        combo_num_layer {
-            timeout-ms = <70>;
+        combo_bt_layer {
+            timeout-ms = <50>;
             key-positions = <32 33>;
             bindings = <&mo 4>;
         };
+
+        // Toggle RUS-Layer by CLICKING both outer thumbs (30 and 35)
+
+        combo_bt_layer {
+            timeout-ms = <50>;
+            key-positions = <32 33>;
+            bindings = <&tg 6>;
+        };
+
 
         // Parentheses
 
@@ -265,6 +274,17 @@
   &trans  &trans  &trans  &trans  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
   &trans  &trans  &trans  &trans  &trans    &kp F10  &kp F1  &kp F2  &kp F3  &none
                   &trans  &trans  &trans    &trans   &trans  &trans
+            >;
+        };
+
+        // Layer 6: RUS
+        rus_layer {
+            display-name = "RUS";
+            bindings = <
+  &kp Q  &kp W  &kp E              &kp R         &kp T               &kp Y               &kp U               &kp I        &kp O       &kp P
+  &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G               &kp H               &hm RSHIFT J        &kp K        &kp L       &hm RCTRL SEMI
+  &kp Z  &kp X  &kp C              &kp V         &kp B               &kp N               &kp M               &kp COMMA    &kp PERIOD  &kp FSLH
+                &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
             >;
         };
     };
