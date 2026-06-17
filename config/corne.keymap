@@ -9,17 +9,23 @@
 #include <dt-bindings/zmk/keys.h>
 
 #define DEF 0
-#define SYM 1
-#define ARR 2
-#define NUM 3
-#define BT 4
-#define FF 5
-#define RUS 6
+#define RUS 1
+#define SYM 2
+#define ARR 3
+#define NUM 4
+#define BT 5
+#define FF 6
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
 
     macros {
+        macro_rus: macro_rus {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&kp LA(SPACE) &tog RUS>;
+        };
+
         th_macro: th_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -79,16 +85,17 @@
         combo_bt_layer {
             timeout-ms = <50>;
             key-positions = <32 33>;
-            bindings = <&mo 4>;
+            bindings = <&mo BT>;
         };
 
         // Toggle RUS-Layer by CLICKING both outer thumbs (30 and 35)
 
-        // combo_rus_layer {
-        //     timeout-ms = <50>;
-        //     key-positions = <30 35>;
-        //     bindings = <&tog 6>;
-        // };
+        combo_rus {
+            timeout-ms = <50>;
+            key-positions = <0 9>;
+            bindings = <&macro_rus>;
+            layers = <DEF RUS>;
+        };
 
         // Parentheses
 
@@ -201,6 +208,16 @@
             >;
         };
 
+        rus_layer {
+            display-name = "RUS";
+            bindings = <
+  &kp Q  &kp W  &kp E              &kp R         &kp T               &kp Y               &kp U               &kp I        &kp O       &kp P
+  &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G               &kp H               &hm RSHIFT J        &kp K        &kp L       &hm RCTRL SEMI
+  &kp Z  &kp X  &kp C              &kp V         &kp B               &kp N               &kp M               &kp COMMA    &kp PERIOD  &kp FSLH
+                &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
+            >;
+        };
+
         // 1: SYM
         //  & *               ` ' " ? ~
         //  $ % ^             | + - = : p
@@ -263,17 +280,5 @@
                   &trans  &trans  &trans    &trans   &trans  &trans
             >;
         };
-
-        // Layer 6: RUS
-
- //         rus_layer {
- //             display-name = "RUS";
- //             bindings = <
- //   &kp Q  &kp W  &kp E              &kp R         &kp T               &kp Y               &kp U               &kp I        &kp O       &kp P
- //   &kp A  &kp S  &kp D              &hm LSHIFT F  &kp G               &kp H               &hm RSHIFT J        &kp K        &kp L       &hm RCTRL SEMI
- //   &kp Z  &kp X  &kp C              &kp V         &kp B               &kp N               &kp M               &kp COMMA    &kp PERIOD  &kp FSLH
- //                 &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
- //             >;
- //         };
     };
 };
