@@ -51,19 +51,19 @@
     combos {
         compatible = "zmk,combos";
 
-        // F + J = Caps Word (Turns off on Space)
+        // C + I = Caps Word (Turns off on Space)
 
         combo_caps_word {
-            timeout-ms = <40>; // 30 - too harsh
-            key-positions = <13 16>;
+            timeout-ms = <40>;
+            key-positions = <2 7>;
             bindings = <&caps_word>;
         };
 
-        // V + M = Hard Caps Lock (Traditional Toggle)
+        // D + T = Hard Caps Lock (Traditional Toggle)
 
         combo_caps_lock {
             timeout-ms = <50>;
-            key-positions = <3 6>;
+            key-positions = <12 17>;
             bindings = <&kp CAPS>;
         };
 
@@ -189,7 +189,7 @@
             display-name = "DEF";
             bindings = <
   &kp Q  &kp W        &kp C              &kp R                  &kp K               &kp Y               &kp U               &kp I        &kp O       &kp P
-  &kp A  &hm LCTRL S  &hm_layer WORD D   &hm LSHIFT F           &kp G               &kp H               &hm RSHIFT E        &kp T        &kp L       &kp SEMI
+  &hm LSHIFT A  &kp S  &hm LCTRL D  &hm_layer WORD F       &kp G               &kp H               &kp E               &kp T        &kp L       &hm RSHIFT SEMI
   &kp Z  &kp X        &kp J              &kp V                  &kp B               &kp N               &kp M               &kp COMMA    &kp PERIOD  &kp FSLH
                       &esc_cmd LALT ESC  &kp LGUI  &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
             >;
@@ -199,7 +199,7 @@
             display-name = "RUS";
             bindings = <
   &kp Q  &kp W        &kp E              &kp R                  &kp T               &kp Y               &kp U               &kp I        &kp O       &kp P
-  &kp A  &hm LCTRL S  &hm_layer WORD D   &hm LSHIFT F           &kp G               &kp H               &hm RSHIFT J        &kp K        &kp L       &kp SEMI
+  &hm LSHIFT A  &kp S  &hm LCTRL D  &hm_layer WORD F       &kp G               &kp H               &kp J               &kp K        &kp L       &hm RSHIFT SEMI
   &kp Z  &kp X        &kp C              &kp V                  &kp B               &kp N               &kp M               &kp COMMA    &kp PERIOD  &kp FSLH
                       &esc_cmd LALT ESC  &kp LGUI  &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
             >;
