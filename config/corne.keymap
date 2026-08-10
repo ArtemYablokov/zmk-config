@@ -27,7 +27,6 @@
             bindings = <&kp LA(SPACE) &tog RUS>;
         };
 
-        /*
         th_macro: th_macro {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
@@ -61,7 +60,6 @@
             bindings = <&kp I &kp N &kp G>;
             label = "ING_MACRO";
         };
-        */
     };
 
     combos {
@@ -311,9 +309,9 @@
         word_layer {
             display-name = "WORD";
             bindings = <
-  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
-  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
-  &none  &none  &none  &none  &none    &none  &none  &none  &none  &none
+  &none  &none  &none  &none  &none    &none  &ing_macro  &none  &none  &none
+  &none  &none  &none  &none  &none    &none  &th_macro  &none  &none  &none
+  &none  &none  &none  &none  &none    &none  &tion_macro  &none  &none  &none
                 &trans &trans &trans   &trans &trans &trans
             >;
         };
