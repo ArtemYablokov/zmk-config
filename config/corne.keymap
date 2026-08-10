@@ -177,8 +177,10 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+
+            tapping-term-ms = <200>;
             quick-tap-ms = <125>;
+            require-prior-idle-ms = <80>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
@@ -189,7 +191,7 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";       // Triggers 'hold' if another key is pressed
-            tapping-term-ms = <150>;    // Lower term for faster response
+            tapping-term-ms = <200>;    // Lower term for faster response
             quick-tap-ms = <140>;       // Allows for tap repetition
             bindings = <&mo>, <&kp>;
         };
