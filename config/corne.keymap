@@ -146,9 +146,8 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <125>;
-            require-prior-idle-ms = <80>;
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
@@ -159,11 +158,12 @@
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";       // Triggers 'hold' if another key is pressed
-            tapping-term-ms = <200>;    // Lower term for faster response
+            tapping-term-ms = <150>;    // Lower term for faster response
             quick-tap-ms = <140>;       // Allows for tap repetition
             bindings = <&mo>, <&kp>;
         };
 
+        // not using - but can in future - CMD as a tap == CMD + TAB
         cmd_tab: cmd_tab {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
@@ -175,9 +175,8 @@
         hm_layer: hm_layer {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <200>;
+            tapping-term-ms = <150>;
             quick-tap-ms = <125>;
-            require-prior-idle-ms = <80>;
             flavor = "balanced";
             bindings = <&mo>, <&kp>;
         };
@@ -192,7 +191,7 @@
   &kp Q  &kp W        &kp C              &kp R                  &kp K               &kp Y               &kp U               &kp I        &kp O       &kp P
   &kp A  &hm LCTRL S  &hm_layer WORD D   &hm LSHIFT F           &kp G               &kp H               &hm RSHIFT E        &kp T        &kp L       &kp SEMI
   &kp Z  &kp X        &kp J              &kp V                  &kp B               &kp N               &kp M               &kp COMMA    &kp PERIOD  &kp FSLH
-                      &esc_cmd LALT ESC  &cmd_tab LGUI LG(TAB)  &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
+                      &esc_cmd LALT ESC  &kp LGUI  &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
             >;
         };
 
@@ -202,7 +201,7 @@
   &kp Q  &kp W        &kp E              &kp R                  &kp T               &kp Y               &kp U               &kp I        &kp O       &kp P
   &kp A  &hm LCTRL S  &hm_layer WORD D   &hm LSHIFT F           &kp G               &kp H               &hm RSHIFT J        &kp K        &kp L       &kp SEMI
   &kp Z  &kp X        &kp C              &kp V                  &kp B               &kp N               &kp M               &kp COMMA    &kp PERIOD  &kp FSLH
-                      &esc_cmd LALT ESC  &cmd_tab LGUI LG(TAB)  &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
+                      &esc_cmd LALT ESC  &kp LGUI  &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_fast NUM SPACE  &lt FF BSPC
             >;
         };
 
