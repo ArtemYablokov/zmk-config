@@ -60,11 +60,11 @@
 
         // POINT FINGERS = Hard Caps Lock (Traditional Toggle)
 
-        // combo_caps_lock {
-        //     timeout-ms = <50>;
-        //     key-positions = <13 16>;
-        //     bindings = <&kp CAPS>;
-        // };
+        combo_caps_lock {
+            timeout-ms = <50>;
+            key-positions = <13 16>;
+            bindings = <&kp CAPS>;
+        };
 
         // Toggle BT-Layer by pressing both inner thumbs (32 and 33)
 
