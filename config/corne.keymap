@@ -126,24 +126,6 @@
         };
 
         // Word macros
-
-        combo_th {
-            timeout-ms = <40>;
-            key-positions = <12 17>;
-            bindings = <&th_macro>;
-        };
-
-        combo_ing {
-            timeout-ms = <40>;
-            key-positions = <2 7>;
-            bindings = <&ing_macro>;
-        };
-
-        combo_tion {
-            timeout-ms = <40>;
-            key-positions = <22 27>;
-            bindings = <&tion_macro>;
-        };
     };
 
     behaviors {
