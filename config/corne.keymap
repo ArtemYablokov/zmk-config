@@ -164,7 +164,7 @@
             bindings = <&mo>, <&kp>;
         };
 
-        lt_space: fast_layer_tap {
+        lt_space: slower_space_layer_tap {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
             flavor = "balanced";       // Triggers 'hold' if another key is pressed
