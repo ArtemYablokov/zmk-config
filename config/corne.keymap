@@ -230,7 +230,7 @@
             display-name = "ARR";
             bindings = <
   &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none
-  &trans  &trans  &trans  &trans  &trans    &none      &kp LEFT      &kp DOWN  &kp RIGHT      &kp CAPS
+  &trans  &trans  &trans  &trans  &trans    &none      &kp LEFT      &kp DOWN  &kp RIGHT      &trans
   &trans  &trans  &trans  &trans  &trans    &kp PG_DN  &kp HOME      &none     &kp END        &none
                   &trans  &trans  &trans    &trans     &trans        &trans
             >;
