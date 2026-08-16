@@ -152,7 +152,7 @@
             flavor = "balanced";
             bindings = <&kp>, <&kp>;
 
-            require-prior-idle-ms = <100>; // remove since blocks me from immediate trigger shift after BSPC
+            require-prior-idle-ms = <150>; // remove since blocks me from immediate trigger shift after BSPC
         };
 
         lt_fast: fast_layer_tap {
