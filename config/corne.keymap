@@ -54,7 +54,7 @@
 
         combo_caps_word {
             timeout-ms = <65>;
-            key-positions = <3 6>;
+            key-positions = <13 16>;
             bindings = <&caps_word>;
         };
 
@@ -62,7 +62,7 @@
 
         combo_caps_lock {
             timeout-ms = <65>;
-            key-positions = <13 16>;
+            key-positions = <3 6>;
             bindings = <&kp CAPS>;
         };
 
