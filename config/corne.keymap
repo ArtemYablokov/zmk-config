@@ -108,12 +108,12 @@
         hm: homerow_mods {
             compatible = "zmk,behavior-hold-tap";
             #binding-cells = <2>;
-            tapping-term-ms = <150>;
+            tapping-term-ms = <200>;
             quick-tap-ms = <125>;
             flavor = "tap-preferred";
             bindings = <&kp>, <&kp>;
 
-            require-prior-idle-ms = <150>; // remove since blocks me from immediate trigger shift after BSPC
+            // require-prior-idle-ms = <150>; // remove since blocks me from immediate trigger shift after BSPC
         };
 
         // Модификаторы для ЛЕВОЙ руки (включаются, только если нажата кнопка СПРАВА)
