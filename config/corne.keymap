@@ -164,7 +164,7 @@
             quick-tap-ms = <140>;       // Allows for tap repetition
             bindings = <&mo>, <&kp>;
 
-            retro-tap;                // If the user held the key past the tapping term but never pressed any other keys, send the tap action (Space) when they finally release it."
+            // retro-tap;                // If the user held the key past the tapping term but never pressed any other keys, send the tap action (Space) when they finally release it."
             tapping-term-ms = <175>;
         };
 
