@@ -8,13 +8,14 @@
 #include <dt-bindings/zmk/bt.h>
 #include <dt-bindings/zmk/keys.h>
 
-#define DEF 0
+#define ENG 0
 #define RUS 1
 #define SYM 2
 #define ARR 3
 #define NUM 4
 #define BT 5
 #define FF 6
+#define BRACKETS 7
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
@@ -164,6 +165,21 @@
             bindings = <&mo>, <&kp>;
         };
 
+        // HOME ROW for a CHARS
+        lt_r: layer_tap_right {
+            compatible = "zmk,behavior-hold-tap";
+            #binding-cells = <2>;
+            tapping-term-ms = <200>;
+            quick-tap-ms = <125>;
+            flavor = "tap-preferred";
+            hold-trigger-on-release;
+
+            // Индексы всех кнопок правой половины (включая большие пальцы)
+            hold-trigger-key-positions = <0 1 2 3 4 10 11 12 13 14 20 21 22 23 24 30 31 32>;
+
+            // &mo triggers the layer on hold, &kp triggers the key on tap
+            bindings = <&mo>, <&kp>;
+        };
 
 
         lt_fast: fast_layer_tap {
@@ -200,15 +216,24 @@
     keymap {
         compatible = "zmk,keymap";
 
-        default_layer {
-            display-name = "DEF";
+
+        // 0: ENG
+
+        eng_layer {
+            display-name = "ENG";
             bindings = <
-  &kp Q  &kp W         &kp C              &kp R         &kp K               &kp Y               &kp U                &kp I         &kp O         &kp P
-  &kp A  &lt_l SYM S   &lt_l NUM D       &hm LSHIFT F  &kp G         &kp H               &hm RSHIFT E         &kp T  &kp L  &hm RCTRL SEMI
-  &kp Z  &kp X         &kp J              &kp V         &kp B               &kp N               &kp M                &kp COMMA     &kp PERIOD    &kp FSLH
-                       &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB    &lt_fast ARR ENTER  &lt_space NUM SPACE  &lt FF BSPC
+  &kp Q  &kp W              &kp C              &kp R         &kp K                         &kp Y               &kp U                &kp I         &kp O         &kp P
+  &kp A  &lt_l BRACKETS S   &lt_l NUM D        &hm LSHIFT F  &kp G                         &kp H               &hm RSHIFT E         &kp T  &kp L  &hm RCTRL SEMI
+  &kp Z  &kp X              &kp J              &kp V         &kp B                         &kp N               &kp M                &kp COMMA     &kp PERIOD    &kp FSLH
+                            &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB         &lt_fast ARR ENTER       &kp SPACE  &lt FF BSPC
             >;
         };
+
+
+
+
+
+        // 1: RUS
 
         rus_layer {
             display-name = "RUS";
@@ -220,36 +245,24 @@
             >;
         };
 
-        // 1: SYM
-        //  & *               ` ' " ? ~
-        //  $ % ^             | + - = : p
+        // 2: SYM
+        //  & * `             & ' " ! ~
+        //  $ % ^             | + - = :
         //  ! @ #             \ _ < > ?
 
-        brackets_layer {
+        sym_layer {
             display-name = "SYM";
             bindings = <
-  &none  &none  &none  &none  &none     &kp GRAVE      &kp SQT    &kp DQT    &kp EXCL   &kp TILDE
-  &none  &none  &none  &none  &none     &kp PIPE       &kp PLUS   &kp MINUS  &kp EQUAL  &kp COLON
-  &none  &none  &none  &none  &none     &kp BACKSLASH  &kp UNDER  &kp LT     &kp GT     &kp QUESTION
-       &trans     &trans     &trans    &trans         &trans     &trans
+                    &none  &kp AMPS  &kp ASTRK  &GRAVE     &TILDE                         &kp AMPS       &kp SQT    &kp DQT    &kp EXCL   &kp ASTRK
+                    &none  &kp DLLR  &kp PRCNT  &kp CARET  &none                         &kp PIPE       &kp PLUS   &kp MINUS  &kp EQUAL  &kp COLON
+                    &none  &kp EXCL  &kp AT     &kp HASH   &none                         &kp BACKSLASH  &kp UNDER  &kp LT     &kp GT     &kp QUESTION
+                                 &trans     &trans     &trans                        &trans         &trans     &trans
             >;
         };
 
-        // brackets_layer {
-        //             display-name = "SYM";
-        //             bindings = <
-        //   &none  &kp AMPS  &kp ASTRK  &none      &none     &kp GRAVE      &kp SQT    &kp DQT    &kp EXCL   &kp TILDE
-        //   &none  &kp DLLR  &kp PRCNT  &kp CARET  &none     &kp PIPE       &kp PLUS   &kp MINUS  &kp EQUAL  &kp COLON
-        //   &none  &kp EXCL  &kp AT     &kp HASH   &none     &kp BACKSLASH  &kp UNDER  &kp LT     &kp GT     &kp QUESTION
-        //                    &trans     &trans     &trans    &trans         &trans     &trans
-        //     >;
-        // };
+        //  3: ARR
 
-
-
-        //  2: ARR
-
-        nav_layer {
+        arr_layer {
             display-name = "ARR";
             bindings = <
   &trans  &trans  &trans  &trans  &trans    &kp PG_UP  &kp LA(LEFT)  &kp UP    &kp LA(RIGHT)  &none
@@ -259,40 +272,54 @@
             >;
         };
 
-        // 3: NUM  LPAR RPAR LBKT RBKT LBRC RBRC
+        // 4: NUM  LPAR RPAR LBKT RBKT LBRC RBRC
 
-        numpad_layer {
+        num_layer {
             display-name = "NUM";
             bindings = <
-  &trans  &kp LPAR  &kp RPAR  &trans  &trans    &none   &kp N7  &kp N8  &kp N9  &none
-  &trans  &kp LBKT  &kp RBKT  &trans  &trans    &none   &kp N4  &kp N5  &kp N6  &kp N0
-  &trans  &kp LBRC  &kp RBRC  &trans  &trans    &none   &kp N1  &kp N2  &kp N3  &none
-                    &trans    &trans  &trans    &trans  &trans  &trans
+  &trans  &trans  &trans  &trans  &trans            &none   &kp N7  &kp N8  &kp N9  &none
+  &trans  &trans  &trans  &trans  &trans            &none   &kp N4  &kp N5  &kp N6  &kp UNDER
+  &trans  &trans  &trans  &trans  &trans            &none   &kp N1  &kp N2  &kp N3  &none
+                    &trans    &trans  &trans        &kp N0  &trans  &trans
             >;
         };
 
-        // 4: BT
+        // 5: BT
 
-        symbol_layer {
+        bt_layer {
             display-name = "BT";
             bindings = <
-  &bt BT_CLR  &trans  &trans  &trans  &trans    &trans  &trans        &trans        &trans        &trans
-  &trans      &trans  &trans  &trans  &trans    &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
-  &trans      &trans  &trans  &trans  &trans    &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
-                      &trans  &trans  &trans    &trans  &trans        &trans
+  &bt BT_CLR  &trans  &trans  &trans  &trans                    &trans  &trans        &trans        &trans        &trans
+  &trans      &trans  &trans  &trans  &trans                    &trans  &bt BT_SEL 3  &bt BT_SEL 4  &trans        &trans
+  &trans      &trans  &trans  &trans  &trans                    &trans  &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &trans
+                      &trans  &trans  &trans                    &trans  &trans        &trans
             >;
         };
 
-        // Layer 5: FF
+        // Layer 6: FF
 
-        f_layer {
+        ff_layer {
             display-name = "FF";
             bindings = <
-  &trans  &trans  &trans  &trans  &trans    &kp F12  &kp F7  &kp F8  &kp F9  &none
-  &trans  &trans  &trans  &trans  &trans    &kp F11  &kp F4  &kp F5  &kp F6  &none
-  &trans  &trans  &trans  &trans  &trans    &kp F10  &kp F1  &kp F2  &kp F3  &none
-                  &trans  &trans  &trans    &trans   &trans  &trans
+  &trans  &trans  &trans  &trans  &trans                        &kp F12  &kp F7  &kp F8  &kp F9  &none
+  &trans  &trans  &trans  &trans  &trans                        &kp F11  &kp F4  &kp F5  &kp F6  &none
+  &trans  &trans  &trans  &trans  &trans                        &kp F10  &kp F1  &kp F2  &kp F3  &none
+                  &trans  &trans  &trans                        &trans   &trans  &trans
             >;
         };
+
+
+        // Layer 7: BRACKETS
+
+        brackets_layer {
+                    display-name = "BRACKETS";
+                    bindings = <
+          &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LPAR  &kp RPAR  &none
+          &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LBKT  &kp RBKT  &none
+          &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LBRC  &kp RBRC  &none
+                          &trans  &trans  &trans                     &trans     &trans     &trans
+            >;
+        };
+
     };
 };
