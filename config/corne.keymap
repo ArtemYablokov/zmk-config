@@ -253,7 +253,7 @@
         sym_layer {
             display-name = "SYM";
             bindings = <
-                    &none  &kp AMPS  &kp ASTRK  &GRAVE     &TILDE                         &kp AMPS       &kp SQT    &kp DQT    &kp EXCL   &kp ASTRK
+                    &none  &kp AMPS  &kp ASTRK  &kp GRAVE     &kp TILDE                         &kp AMPS       &kp SQT    &kp DQT    &kp EXCL   &kp ASTRK
                     &none  &kp DLLR  &kp PRCNT  &kp CARET  &none                         &kp PIPE       &kp PLUS   &kp MINUS  &kp EQUAL  &kp COLON
                     &none  &kp EXCL  &kp AT     &kp HASH   &none                         &kp BACKSLASH  &kp UNDER  &kp LT     &kp GT     &kp QUESTION
                                  &trans     &trans     &trans                        &trans         &trans     &trans
