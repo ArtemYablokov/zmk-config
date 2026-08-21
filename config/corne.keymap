@@ -81,7 +81,7 @@
             timeout-ms = <50>;
             key-positions = <0 9>;
             bindings = <&macro_rus>;
-            layers = <DEF RUS>;
+            layers = <ENG RUS>;
         };
 
         // Parentheses
