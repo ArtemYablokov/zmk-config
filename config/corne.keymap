@@ -317,7 +317,7 @@
           &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LPAR  &kp RPAR  &none
           &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LBKT  &kp RBKT  &none
           &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LBRC  &kp RBRC  &none
-                          &trans  &trans  &trans                     &none     &trans     &trans
+                          &trans  &trans  &trans                     &trans     &trans     &trans
             >;
         };
 
