@@ -234,7 +234,7 @@
   &kp Q  &kp W              &kp C              &kp R         &kp K                         &kp Y               &kp U                &kp I         &kp O         &kp P
   &kp A  &lt_l BRACKETS S   &lt_l NUM D        &kp F         &kp G                         &kp H               &kp E                &kp T         &kp L         &hm RCTRL SEMI
   &kp Z  &kp X              &kp J              &kp V         &kp B                         &kp N               &kp M                &kp COMMA     &kp PERIOD    &kp FSLH
-                            &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB              &lt_fast ARR ENTER  &mt_fast RSHIFT SPACE  &lt FF BSPC
+                            &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB              &mt_fast ARR ENTER  &lt_fast RSHIFT SPACE  &lt FF BSPC
             >;
         };
 
