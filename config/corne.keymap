@@ -223,7 +223,7 @@
             display-name = "ENG";
             bindings = <
   &kp Q  &kp W              &kp C              &kp R         &kp K                         &kp Y               &kp U                &kp I         &kp O         &kp P
-  &hm LSHIFT A  &kp S   &lt_l BRACKETS D        &lt_l NUM F  &hm RCTRL G                         &kp H               & E         &kp T  &kp L  &hm RSHIFT  SEMI
+  &hm LSHIFT A  &kp S   &lt_l BRACKETS D        &lt_l NUM F  &hm RCTRL G                         &kp H               &kp E         &kp T  &kp L  &hm RSHIFT  SEMI
   &kp Z  &kp X              &kp J              &kp V         &kp B                         &kp N               &kp M                &kp COMMA     &kp PERIOD    &kp FSLH
                             &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB         &lt_fast ARR ENTER       &kp SPACE  &lt FF BSPC
             >;
