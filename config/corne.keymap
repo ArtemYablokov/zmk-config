@@ -337,7 +337,7 @@
         //  $ % ^
         //  ! @ #
 
-        sym_layer_2 {
+        sym_layer {
             display-name = "SYM2";
             bindings = <
             &trans  &trans  &trans  &trans  &trans                     &none  &kp AMPS  &kp ASTRK  &kp GRAVE  &kp TILDE
