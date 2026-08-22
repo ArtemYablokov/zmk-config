@@ -16,7 +16,6 @@
 #define BT 5
 #define FF 6
 #define BRACKETS 7
-#define SYM2 8
 
 / {
     chosen { zmk,matrix_transform = &five_column_transform; };
@@ -233,9 +232,9 @@
             display-name = "ENG";
             bindings = <
   &kp Q  &kp W              &kp C              &kp R         &kp K                         &kp Y               &kp U                &kp I         &kp O         &kp P
-  &lt_l SYM2 A  &lt_l SYM S   &lt_l BRACKETS D        &lt_l NUM F         &kp G                         &kp H               &kp E                &kp T         &kp L         &hm RCTRL SEMI
+  &kp A  &lt_l BRACKETS S   &lt_l NUM D        &kp F         &kp G                         &kp H               &kp E                &kp T         &kp L         &hm RCTRL SEMI
   &kp Z  &kp X              &kp J              &kp V         &kp B                         &kp N               &kp M                &kp COMMA     &kp PERIOD    &kp FSLH
-                            &esc_cmd LALT ESC  &kp LGUI      &mt_fast RSHIFT TAB              &lt_fast ARR ENTER  &kp SPACE  &lt FF BSPC
+                            &esc_cmd LALT ESC  &kp LGUI      &lt_fast SYM TAB              &lt_fast ARR ENTER  &mt_fast RSHIFT SPACE  &lt FF BSPC
             >;
         };
 
@@ -319,7 +318,7 @@
         };
 
 
-        // 7: BRACKETS
+        // Layer 7: BRACKETS
 
         brackets_layer {
                     display-name = "BRACKETS";
@@ -328,22 +327,6 @@
           &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LBKT  &kp RBKT  &none
           &trans  &trans  &trans  &trans  &trans                     &none  &none  &kp LBRC  &kp RBRC  &none
                           &trans  &trans  &trans                     &trans     &trans     &trans
-            >;
-        };
-
-
-        // 8: SYM 2
-        //  & * ` ~
-        //  $ % ^
-        //  ! @ #
-
-        sym_layer {
-            display-name = "SYM2";
-            bindings = <
-            &trans  &trans  &trans  &trans  &trans                     &none  &kp AMPS  &kp ASTRK  &kp GRAVE  &kp TILDE
-            &trans  &trans  &trans  &trans  &trans                     &none  &kp DLLR  &kp PRCNT  &kp CARET  &none
-            &trans  &trans  &trans  &trans  &trans                     &none  &kp EXCL  &kp AT     &kp HASH   &none
-                            &trans  &trans  &trans                     &trans     &trans     &trans
             >;
         };
 
